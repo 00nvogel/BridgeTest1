@@ -13,45 +13,17 @@
   },
   "branch": "sanitizer-bridge/import-1",
   "checkpoint": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-  "cleanup": [],
-  "generated": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
+  "cleanup": [
+    {
+      "commit": "341d0747417587140716f6f0357c96ffd374a3f1",
+      "role": "internal",
+      "stage": "sanitizer-bridge-stage/embedded/e8d3c1e2102d480dae126fac058da0e5"
+    }
+  ],
+  "generated": "341d0747417587140716f6f0357c96ffd374a3f1",
   "mode": "ready",
-  "observed": "46d3f532d8d5b86487da5c35e08c2b7856e9158b",
-  "pending": {
-    "branch": "sanitizer-bridge/import-1",
-    "commit": "341d0747417587140716f6f0357c96ffd374a3f1",
-    "expected": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
-    "id": "e8d3c1e2102d480dae126fac058da0e5",
-    "next": {
-      "base": "57e903c556145972e6859e22ddfdcd362a397395",
-      "binding": {
-        "bootstrap_internal_commit": "6dad2a12b368199411c6c2878cca93a705ca8599",
-        "customer": {
-          "branch": "v2-embedded-customer",
-          "repository": "00nvogel/BridgeTest2"
-        },
-        "internal": {
-          "branch": "v2-internal",
-          "repository": "00nvogel/BridgeTest1"
-        }
-      },
-      "branch": "sanitizer-bridge/import-1",
-      "checkpoint": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-      "cleanup": [],
-      "generated": "341d0747417587140716f6f0357c96ffd374a3f1",
-      "mode": "ready",
-      "observed": "6fdcf0ad2222d1b9999340e40cb2b8daf11419cb",
-      "pending": null,
-      "schema": 2,
-      "sequence": 1,
-      "suspension": {
-        "reason": "Customer history was deleted, rewritten, or a required commit became unavailable. Imports resume after the next successful explicit export."
-      }
-    },
-    "role": "internal",
-    "source": "6fdcf0ad2222d1b9999340e40cb2b8daf11419cb",
-    "stage": "sanitizer-bridge-stage/embedded/e8d3c1e2102d480dae126fac058da0e5"
-  },
+  "observed": "6fdcf0ad2222d1b9999340e40cb2b8daf11419cb",
+  "pending": null,
   "schema": 2,
   "sequence": 1,
   "suspension": {
