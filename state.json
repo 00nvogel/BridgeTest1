@@ -20,5 +20,7 @@
   "pending": null,
   "schema": 2,
   "sequence": 1,
-  "suspension": null
+  "suspension": {
+    "reason": "Customer history was deleted, rewritten, or a required commit became unavailable. Imports resume after the next successful explicit export."
+  }
 }
