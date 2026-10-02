@@ -13,13 +13,7 @@
   },
   "branch": "sanitizer-bridge/import-1",
   "checkpoint": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-  "cleanup": [
-    {
-      "commit": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
-      "role": "internal",
-      "stage": "sanitizer-bridge-stage/embedded/fc5d060ac2ee411b907b4bf0ffda6dc3"
-    }
-  ],
+  "cleanup": [],
   "generated": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
   "mode": "ready",
   "observed": "e4fb32d6e16d8fb042467d27cdf54913cb95b0f6",
