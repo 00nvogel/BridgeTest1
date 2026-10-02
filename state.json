@@ -17,7 +17,39 @@
   "generated": "341d0747417587140716f6f0357c96ffd374a3f1",
   "mode": "ready",
   "observed": "6fdcf0ad2222d1b9999340e40cb2b8daf11419cb",
-  "pending": null,
+  "pending": {
+    "branch": "v2-embedded-customer",
+    "commit": "dda1b3245d400dbc98542017f0cefe8441e686e0",
+    "expected": "6fdcf0ad2222d1b9999340e40cb2b8daf11419cb",
+    "id": "b4a7731ccbe94b7f9148028ae2af94ab",
+    "next": {
+      "base": "57e903c556145972e6859e22ddfdcd362a397395",
+      "binding": {
+        "bootstrap_internal_commit": "6dad2a12b368199411c6c2878cca93a705ca8599",
+        "customer": {
+          "branch": "v2-embedded-customer",
+          "repository": "00nvogel/BridgeTest2"
+        },
+        "internal": {
+          "branch": "v2-internal",
+          "repository": "00nvogel/BridgeTest1"
+        }
+      },
+      "branch": null,
+      "checkpoint": "dda1b3245d400dbc98542017f0cefe8441e686e0",
+      "cleanup": [],
+      "generated": null,
+      "mode": "ready",
+      "observed": "dda1b3245d400dbc98542017f0cefe8441e686e0",
+      "pending": null,
+      "schema": 2,
+      "sequence": 1,
+      "suspension": null
+    },
+    "role": "customer",
+    "source": "57e903c556145972e6859e22ddfdcd362a397395",
+    "stage": "sanitizer-bridge-stage/embedded/b4a7731ccbe94b7f9148028ae2af94ab"
+  },
   "schema": 2,
   "sequence": 1,
   "suspension": {
