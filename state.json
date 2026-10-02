@@ -11,46 +11,20 @@
       "repository": "00nvogel/BridgeTest1"
     }
   },
-  "branch": null,
+  "branch": "sanitizer-bridge/import-1",
   "checkpoint": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-  "cleanup": [],
-  "generated": null,
+  "cleanup": [
+    {
+      "commit": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
+      "role": "internal",
+      "stage": "sanitizer-bridge-stage/embedded/fc5d060ac2ee411b907b4bf0ffda6dc3"
+    }
+  ],
+  "generated": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
   "mode": "ready",
-  "observed": "590c467e2aee12b5cb2e126b16f8bc7fad435abf",
-  "pending": {
-    "branch": "sanitizer-bridge/import-1",
-    "commit": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
-    "expected": null,
-    "id": "fc5d060ac2ee411b907b4bf0ffda6dc3",
-    "next": {
-      "base": "57e903c556145972e6859e22ddfdcd362a397395",
-      "binding": {
-        "bootstrap_internal_commit": "6dad2a12b368199411c6c2878cca93a705ca8599",
-        "customer": {
-          "branch": "v2-embedded-customer",
-          "repository": "00nvogel/BridgeTest2"
-        },
-        "internal": {
-          "branch": "v2-internal",
-          "repository": "00nvogel/BridgeTest1"
-        }
-      },
-      "branch": "sanitizer-bridge/import-1",
-      "checkpoint": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-      "cleanup": [],
-      "generated": "226bebe531ff9738fbd12aeea5ad7cf57e77a9f9",
-      "mode": "ready",
-      "observed": "e4fb32d6e16d8fb042467d27cdf54913cb95b0f6",
-      "pending": null,
-      "schema": 2,
-      "sequence": 1,
-      "suspension": null
-    },
-    "role": "internal",
-    "source": "e4fb32d6e16d8fb042467d27cdf54913cb95b0f6",
-    "stage": "sanitizer-bridge-stage/embedded/fc5d060ac2ee411b907b4bf0ffda6dc3"
-  },
+  "observed": "e4fb32d6e16d8fb042467d27cdf54913cb95b0f6",
+  "pending": null,
   "schema": 2,
-  "sequence": 0,
+  "sequence": 1,
   "suspension": null
 }
