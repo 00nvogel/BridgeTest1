@@ -13,13 +13,7 @@
   },
   "branch": null,
   "checkpoint": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-  "cleanup": [
-    {
-      "commit": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
-      "role": "customer",
-      "stage": "sanitizer-bridge-stage/embedded/51eb6ba42f074ae7bca0ba8b9d4b00fb"
-    }
-  ],
+  "cleanup": [],
   "generated": null,
   "mode": "ready",
   "observed": "00d0c09acd765120391a3021eead3b0cf8c3ea18",
