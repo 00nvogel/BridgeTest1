@@ -1,0 +1,14 @@
+bootstrap_internal_commit: 6dad2a12b368199411c6c2878cca93a705ca8599
+customer:
+  branch: v2-embedded-customer
+  repository: 00nvogel/BridgeTest2
+detection:
+  notification: true
+  polling: true
+enabled: true
+internal:
+  branch: v2-internal
+sanitizer: sanitization.sh
+secrets:
+  customer: BRIDGE_TEST_TOKEN
+  internal: BRIDGE_TEST_TOKEN

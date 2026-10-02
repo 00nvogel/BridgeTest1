@@ -1,0 +1,18 @@
+# Install as .github/workflows/bridge-notify.yml in the CUSTOMER repository.
+name: Notify embedded bridge
+on:
+  push:
+    branches: [main] # Match the configured customer branch.
+permissions: {}
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request authoritative customer fetch
+        env:
+          GH_TOKEN: ${{ secrets.BRIDGE_DISPATCH_TOKEN }}
+          INTERNAL_REPOSITORY: your-organization/internal-project
+          INTERNAL_REF: main
+        run: |
+          gh api --method POST "repos/$INTERNAL_REPOSITORY/actions/workflows/sanitizer-bridge.yml/dispatches" \
+            -f ref="$INTERNAL_REF" -f 'inputs[operation]=notification'

@@ -1,0 +1,62 @@
+name: Sanitizer bridge
+run-name: Embedded bridge ${{ inputs.operation || 'poll' }}
+on:
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Export latest internal head, poll customer, or receive notification
+        type: choice
+        options: [poll, notification, export]
+        default: poll
+        required: true
+permissions:
+  contents: read
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: sanitizer-bridge-embedded
+      queue: max
+      cancel-in-progress: false
+    defaults:
+      run:
+        working-directory: .sanitizer-bridge
+    env:
+      PYTHONPATH: engine
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - id: configuration
+        env:
+          OPERATION: ${{ inputs.operation || 'poll' }}
+        run: |
+          set -euo pipefail
+          trigger="$OPERATION"
+          action=import
+          if [[ "$OPERATION" == export ]]; then trigger=manual; action=export; fi
+          python -m bridge settings --embedded --trigger "$trigger" > "$RUNNER_TEMP/bridge-settings.json"
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          from pathlib import Path
+          settings = json.loads((Path(os.environ['RUNNER_TEMP']) / 'bridge-settings.json').read_text())
+          for key, value in settings.items():
+              print(f'{key}={str(value).lower() if isinstance(value, bool) else value}')
+          PY
+          echo "action=$action" >> "$GITHUB_OUTPUT"
+      - name: Synchronize configured pairing
+        if: steps.configuration.outputs.active == 'true'
+        env:
+          BRIDGE_TOKEN: ${{ secrets[steps.configuration.outputs.internal_secret] }}
+          INTERNAL_TOKEN: ${{ secrets[steps.configuration.outputs.internal_secret] }}
+          CUSTOMER_TOKEN: ${{ secrets[steps.configuration.outputs.customer_secret] }}
+          ACTION: ${{ steps.configuration.outputs.action }}
+        run: python -m bridge "$ACTION" --embedded
